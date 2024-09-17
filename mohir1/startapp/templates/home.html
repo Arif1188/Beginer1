@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Home Page</title>
+</head>
+<body>
+  <h1>Welcome to My Home Page</h1>
+  <link href={% static "main/css/main.css" %} rel="stylesheet">
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="{% url "base/" %}">BASE</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  {% for student in students %}
+  <strong>{{student.first_name}}</strong>
+  <strong>{{student.last_name}}</strong>
+  <br>
+  <strong>Age : {{student.age}}</strong>
+  <br>
+  <strong>Email : {{student.email}}</strong>
+  <br>
+  <img src="{{student.image.url}}">
+  <hr>
+  {% endfor %}
+
+  {% block content %}
+  {% endblock  %}
+
+</body>
+</html>
