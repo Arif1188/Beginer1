@@ -1,0 +1,50 @@
+{% load static %}
+<html>
+<head>
+  <title>HOME Page</title>
+  <link href={% static "main/css/home.css" %} rel='stylesheet'>
+</head>
+<body>
+  <h1>Welcome to My HOME Page</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  {% block content %}
+  {% comment %} <main>
+    <section>
+      <h2>About Me</h2>
+      <p>This is a brief description of myself.</p>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <p>Email: your_email@example.com</p>
+      <p>Phone: 123-456-7890</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your Name</p>
+  </footer> {% endcomment %}
+  {% endblock  %}
+
+  {% for product in products  %}
+  <strong>Product: <a href="{% url "detail" id=product.id %}">{{product.product_name}}</a></strong><br>
+  <strong>Made in: {{product.made_in}}</strong><br>
+  <strong>Made year: {{product.made_year}}</strong><br>
+  <strong>Product's color: <mark style='background-color: {{product.product_color}};'>{{product.product_color}}</mark></strong><br>
+  <img src="{{product.image.url}}"><br>
+  <a href="{% url "delete" id=product.id %}">Delete</a><hr>
+  
+
+  
+  {% endfor %}
+
+
+</body>
+</html>
