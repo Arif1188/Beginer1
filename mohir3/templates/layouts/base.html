@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+<head>
+  <title>HOME Page</title>
+  <link href={% static "main/css/home.css" %} rel='stylesheet'>
+  <link href={% static "bootstrap/css/bootstrap.min.css" %} rel='stylesheet'>
+  <link href={% static "bootstrap-icons/font/bootstrap-icons.css" %} rel='stylesheet'>
+</head>
+<body>
+
+{% include "layouts/navbar.html" %}
+{% block  content%}
+{% endblock  %}
+
+<script src="{% static "bootstrap/js/bootstrap.bundle.js" %}"></script>
+<script src="{% static "main/js/main.js" %}"></script>
+</body>
+</html>

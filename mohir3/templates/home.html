@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block  content%}
+{% for task in tasks %}
+<div class="card">
+    <h5 class="card-header">{{task.title}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">{{task.description}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock  %}
